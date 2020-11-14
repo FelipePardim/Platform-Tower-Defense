@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/ConstructionLocal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Tower.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
@@ -64,3 +65,6 @@ position = Vector2( 90.0646, 82.6931 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="Tower" parent="." instance=ExtResource( 7 )]
+position = Vector2( -11.6541, 49.7948 )
