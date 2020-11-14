@@ -16,7 +16,6 @@ var state = MOVE
 # Player states
 enum {
 	MOVE,
-	JUMP,
 	BUILD,
 	RUN,
 	DEAD
@@ -27,31 +26,23 @@ func _physics_process(delta):
 	match state:
 		MOVE:
 			move_state(delta)
-		JUMP:
-			pass
 		BUILD:
-			pass
+			build_state(delta)
 		RUN:
 			pass
 		DEAD:
 			pass
+	get_input()
 
 # Side move mechanic
 func move_state(delta):
-	get_input()
 	velocity.y += GRAVITY * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	if Input.is_action_just_pressed("ui_up"):
-		if is_on_floor():
-			velocity.y = JUMP_SPEED
-
-# Jump mechanic
-func jump_state(delta):
-	pass
 
 # Build mechanic
 func build_state(delta):
-	pass
+	if is_on_floor():
+		sprite.play("build")
 
 # Run (sprint) mechanic
 func run_state(delta):
@@ -66,8 +57,17 @@ func get_input():
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += SPEED
 		sprite.play("walk right")
+		state = MOVE
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= SPEED
 		sprite.play("walk left")
+		state = MOVE
+	if Input.is_action_pressed("ui_up"):
+		if is_on_floor():
+			velocity.y = JUMP_SPEED
+			sprite.play("jump")
+			state = MOVE
+	if Input.is_action_pressed("ui_accept"):
+		state = BUILD
 	else:
 		sprite.play("idle")

@@ -39,4 +39,4 @@ JUMP_SPEED = -600
 tile_set = SubResource( 2 )
 cell_size = Vector2( 50, 48 )
 format = 1
-tile_data = PoolIntArray( 65542, 0, 0, 131077, 0, 0, 196608, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
+tile_data = PoolIntArray( 65542, 0, 0, 131077, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
