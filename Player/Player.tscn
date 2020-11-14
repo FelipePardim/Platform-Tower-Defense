@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/player.png" type="Texture" id=2]
@@ -166,6 +166,30 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="AnimationNodeBlendSpace2D" id=44]
+
+[sub_resource type="AnimationNodeStateMachine" id=41]
+states/Idle/node = SubResource( 44 )
+states/Idle/position = Vector2( 210, 59 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=42]
+
+[sub_resource type="Animation" id=43]
+resource_name = "walk left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "build" ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -177,3 +201,11 @@ shape = SubResource( 1 )
 position = Vector2( 8, 0 )
 frames = SubResource( 7 )
 animation = "build"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 41 )
+parameters/playback = SubResource( 42 )
+parameters/Idle/blend_position = Vector2( -0.994624, -0.00578034 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/walk left" = SubResource( 43 )
