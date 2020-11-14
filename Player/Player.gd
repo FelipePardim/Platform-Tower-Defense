@@ -5,8 +5,6 @@ export (int) var SPEED = 200
 export (int) var JUMP_SPEED = -500
 export (int) var GRAVITY = 2000
 
-onready var sprite = $AnimatedSprite
-
 #Moving variable
 var velocity = Vector2.ZERO
 
@@ -41,7 +39,11 @@ func move_state(delta):
 
 # Build mechanic
 func build_state(delta):
-	pass
+	velocity = Vector2.ZERO
+	print("BUILDING")
+	# Building animation has finished
+	# to pass to the move state
+	state = MOVE
 
 # Run (sprint) mechanic
 func run_state(delta):
@@ -55,20 +57,13 @@ func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += SPEED
-		sprite.play("walk right")
-		#state = MOVE
+		state = MOVE
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= SPEED
-		sprite.play("walk left")
-		#state = MOVE
+		state = MOVE
 	if Input.is_action_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = JUMP_SPEED
-			sprite.play("jump")
-			#state = MOVE
 	if Input.is_action_pressed("ui_accept"):
 		if is_on_floor():
-			sprite.play("build")
-			#state = MOVE
-	else:
-		sprite.play("idle")
+			state = BUILD

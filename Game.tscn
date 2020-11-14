@@ -34,15 +34,22 @@ points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.33635
 
 [node name="Game" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 90.0646, 82.6931 )
+current = true
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 90.0646, 82.6931 )
 JUMP_SPEED = -600
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 50, 48 )
 format = 1
-tile_data = PoolIntArray( 65542, 0, 0, 131077, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
+tile_data = PoolIntArray( 65542, 0, 0, 131077, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 315.917, 25.8597 )
