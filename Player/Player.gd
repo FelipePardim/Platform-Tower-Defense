@@ -1,13 +1,12 @@
 extends KinematicBody2D
 
-# Physics constants
-const ACCELERATION = 10
-const MAX_SPEED = 10
-const FRICTION = 10
+# Physics variables (constants)
+export (int) var SPEED = 200
+export (int) var JUMP_SPEED = -800
+export (int) var GRAVITY = 2000
 
-var speed: = Vector2(300.0, 1000.0)
-var gravity: = 3000.0
-var velocity: = Vector2.ZERO
+#Moving variable
+var velocity = Vector2.ZERO
 
 # Defining the initial player state
 var state = MOVE
@@ -25,7 +24,7 @@ enum {
 func _physics_process(delta):
 	match state:
 		MOVE:
-			pass
+			move_state(delta)
 		JUMP:
 			pass
 		BUILD:
@@ -37,9 +36,12 @@ func _physics_process(delta):
 
 # Side move mechanic
 func move_state(delta):
-		var direction: = Vector2(
-			Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), 0.0
-		)
+	get_input()
+	velocity.y += GRAVITY * delta
+	velocity = move_and_slide(velocity, Vector2.UP)
+	if Input.is_action_just_pressed("ui_up"):
+		if is_on_floor():
+			velocity.y = JUMP_SPEED
 
 # Jump mechanic
 func jump_state(delta):
@@ -57,20 +59,9 @@ func run_state(delta):
 func dead_state(delta):
 	pass
 	
-func get_direction() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("move_right") -
-		 Input.get_action_strength("move_left"), 
-		-1.0 if Input. is_action_just_pressed("jump") and is_on_floor() else 1.0
-		)
-func calculate_move_velocity(
-	linear_velocity: Vector2,
-	direction: Vector2,
-	speed: Vector2
-) -> Vector2:
-	var new_velocity: = linear_velocity
-	new_velocity.x = speed.x * direction.x
-	new_velocity.y += gravity * get_physics_process_delta_time()
-	if direction.y == -1.0:
-		new_velocity.y = speed.y * direction.y
-	return speed * direction
+func get_input():
+	velocity.x = 0
+	if Input.is_action_pressed("ui_right"):
+		velocity.x += SPEED
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= SPEED
