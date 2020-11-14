@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Castle.png-a1d6507d479f13e8b1e0025dff2bfd15.stex"
+path="res://.import/Playersheet.png-b3560abd70ee1579a54dad292e64e87d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Castle.png"
-dest_files=[ "res://.import/Castle.png-a1d6507d479f13e8b1e0025dff2bfd15.stex" ]
+source_file="res://Player/Playersheet.png"
+dest_files=[ "res://.import/Playersheet.png-b3560abd70ee1579a54dad292e64e87d.stex" ]
 
 [params]
 
