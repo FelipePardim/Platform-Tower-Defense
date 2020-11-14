@@ -5,6 +5,8 @@ export (int) var SPEED = 200
 export (int) var JUMP_SPEED = -500
 export (int) var GRAVITY = 2000
 
+onready var sprite = $AnimatedSprite
+
 #Moving variable
 var velocity = Vector2.ZERO
 
@@ -63,5 +65,9 @@ func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += SPEED
+		sprite.play("walk right")
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= SPEED
+		sprite.play("walk left")
+	else:
+		sprite.play("idle")
