@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Physics variables (constants)
 export (int) var SPEED = 200
-export (int) var JUMP_SPEED = -800
+export (int) var JUMP_SPEED = -500
 export (int) var GRAVITY = 2000
 
 #Moving variable
