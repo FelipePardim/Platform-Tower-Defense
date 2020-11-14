@@ -2,13 +2,13 @@
 
 ## A simple game developed during the MixandJam 2020 game-jam.
 
-<!-- ![Badge](https://img.shields.io/github/stars/FelipePardim/Action-RPG-Tutorial-Godot-Engine) -->
-<!-- ![Badge](https://img.shields.io/github/forks/FelipePardim/Action-RPG-Tutorial-Godot-Engine) -->
-<!-- ![Badge](https://img.shields.io/github/issues/FelipePardim/Action-RPG-Tutorial-Godot-Engine) -->
-<!-- ![Badge](https://img.shields.io/github/license/FelipePardim/Action-RPG-Tutorial-Godot-Engine) -->
+![Badge](https://img.shields.io/github/stars/FelipePardim/Platform-Tower-Defense)
+![Badge](https://img.shields.io/github/forks/FelipePardim/Platform-Tower-Defense)
+![Badge](https://img.shields.io/github/issues/FelipePardim/Platform-Tower-Defense)
+![Badge](https://img.shields.io/github/license/FelipePardim/Platform-Tower-Defense)
 
 ## About
-#### About the game [About]().
+#### This game was developed during the [MixandJam](https://www.youtube.com/channel/UCLyVUwlB_Hahir_VsKkGPIA) [Game-Jam](https://itch.io/jam/mix-and-game-jam-2020).
  
 ---
 
@@ -35,7 +35,7 @@ To run this project, please install this:
 > ### Clone the repo.
 >>   ```bash
 >>  # Clone this repository
->>  $ git clone https://github.com/FelipePardim/repo
+>>  $ git clone https://github.com/FelipePardim/Platform-Tower-Defense
 >>   ```
 > ### Open the project folder on godot project manager.
 >
@@ -48,7 +48,8 @@ To run this project, please install this:
 This are the tool's used to develop this project:
 
 - [Godot Engine](https://godotengine.org/).
-- [Aseprite](https://).
+- [Aseprite](https://www.aseprite.org/).
+- [Trello](https://trello.com/).
 
 ---
 
@@ -56,4 +57,4 @@ This are the tool's used to develop this project:
     📝 License 
 </h2>
 
-This project is under [MIT](pathtolicense) license.
+This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/LICENSE.md) license.
