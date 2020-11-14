@@ -41,8 +41,7 @@ func move_state(delta):
 
 # Build mechanic
 func build_state(delta):
-	if is_on_floor():
-		sprite.play("build")
+	pass
 
 # Run (sprint) mechanic
 func run_state(delta):
@@ -57,17 +56,19 @@ func get_input():
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += SPEED
 		sprite.play("walk right")
-		state = MOVE
+		#state = MOVE
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= SPEED
 		sprite.play("walk left")
-		state = MOVE
+		#state = MOVE
 	if Input.is_action_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = JUMP_SPEED
 			sprite.play("jump")
-			state = MOVE
+			#state = MOVE
 	if Input.is_action_pressed("ui_accept"):
-		state = BUILD
+		if is_on_floor():
+			sprite.play("build")
+			#state = MOVE
 	else:
 		sprite.play("idle")
