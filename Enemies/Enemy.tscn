@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Joystick.png" type="Texture" id=2]
@@ -7,7 +7,11 @@
 radius = 7.71012
 height = 12.3917
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 15.9545
+
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="EnemySprite" type="Sprite" parent="."]
@@ -16,3 +20,9 @@ texture = ExtResource( 2 )
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.529732, 0.92703 )
 shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )

@@ -11,6 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	add_to_group("Enemies")
 	velocity.y += GRAVITY * delta
 	velocity.x = MOVE_SPEED # Enemy moving velocity
 	velocity = move_and_slide(velocity, Vector2.UP)
