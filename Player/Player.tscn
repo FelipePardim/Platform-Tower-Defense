@@ -312,7 +312,7 @@ shape = SubResource( 1 )
 position = Vector2( 1.89202, -3.15336 )
 texture = ExtResource( 2 )
 hframes = 64
-frame = 59
+frame = 40
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/build left" = SubResource( 2 )
