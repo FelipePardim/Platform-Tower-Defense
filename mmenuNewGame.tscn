@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/mmenuNewGame.gd" type="Script" id=1]
+
+[node name="mmenuNewGame" type="Button"]
+margin_right = 87.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../mmenuExit")
+focus_neighbour_bottom = NodePath("../mmenuOptions")
+text = "New Game"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+start_focused = true
