@@ -11,8 +11,7 @@ func _ready():
 func _physics_process(delta):
 	# Day and night cycle verification
 	if timer.time_left <= 0:
-		timer.set_wait_time(2)
-		print("Spawn Enemy")
+		timer.set_wait_time(5)
 		var b = Enemy.instance()
 		owner.add_child(b)
 		b.transform = $SpawnPoint.global_transform
