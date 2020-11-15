@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/Portal.png" type="Texture" id=1]
 [ext_resource path="res://World/Portal.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.8766, 49.341 )
 
 [node name="Portal" type="StaticBody2D"]
+position = Vector2( 252.229, 56.9506 )
 script = ExtResource( 2 )
+Enemy = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -17,7 +20,6 @@ position = Vector2( -25.3984, -0.396851 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 autostart = true
 
