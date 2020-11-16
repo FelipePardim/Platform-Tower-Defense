@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://World/Tower.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menu/Pause.gd" type="Script" id=8]
 [ext_resource path="res://Menu/mmenuNewGame.gd" type="Script" id=9]
+[ext_resource path="res://World/IceTower.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
@@ -65,7 +66,7 @@ position = Vector2( 90.0646, 82.6931 )
 remote_path = NodePath("../../Camera2D")
 
 [node name="Tower" parent="." instance=ExtResource( 7 )]
-position = Vector2( 35.7327, 115.869 )
+position = Vector2( 31.7642, 118.25 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 90.0646, 82.6931 )
@@ -140,3 +141,6 @@ focus_neighbour_top = NodePath("../Button2")
 focus_neighbour_bottom = NodePath("../Button")
 text = "Exit game"
 script = ExtResource( 9 )
+
+[node name="IceTower" parent="." instance=ExtResource( 10 )]
+position = Vector2( -59.2163, 117.173 )

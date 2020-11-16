@@ -4,7 +4,6 @@
 [ext_resource path="res://Player/Playersheet.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 10.0739
 height = 0.0
 
 [sub_resource type="Animation" id=2]
@@ -297,7 +296,7 @@ states/Idle/position = Vector2( 90, 152 )
 states/Jump/node = SubResource( 25 )
 states/Jump/position = Vector2( 486, 67 )
 states/Walk/node = SubResource( 30 )
-states/Walk/position = Vector2( 168, 32 )
+states/Walk/position = Vector2( 169, 32 )
 transitions = [ "Idle", "Death", SubResource( 31 ), "Idle", "Walk", SubResource( 32 ), "Walk", "Jump", SubResource( 33 ), "Jump", "Walk", SubResource( 34 ), "Idle", "Build", SubResource( 35 ), "Walk", "Build", SubResource( 36 ), "Build", "Idle", SubResource( 37 ), "Walk", "Death", SubResource( 38 ), "Walk", "Idle", SubResource( 39 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -58.8201, 0 )
@@ -312,11 +311,11 @@ position = Vector2( 1.99072, 1.8262 )
 shape = SubResource( 42 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.97545, -3.15336 )
+position = Vector2( 2.02505, -3.15336 )
 z_index = -2
 texture = ExtResource( 2 )
 hframes = 64
-frame = 63
+frame = 62
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/build left" = SubResource( 2 )

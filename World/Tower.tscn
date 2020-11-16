@@ -29,5 +29,8 @@ shape = SubResource( 1 )
 
 [node name="RangeSphere" type="CollisionShape2D" parent="Range"]
 shape = SubResource( 2 )
-[connection signal="area_entered" from="Range" to="." method="_on_Range_area_entered"]
-[connection signal="area_exited" from="Range" to="." method="_on_Range_area_exited"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+[connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
