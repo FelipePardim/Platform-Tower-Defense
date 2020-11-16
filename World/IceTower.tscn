@@ -5,7 +5,7 @@
 [ext_resource path="res://World/Towers/icetower-Sheet.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.2173, 25.9666 )
+extents = Vector2( 13.2295, 25.5718 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 201.193
@@ -18,7 +18,7 @@ Projectile = ExtResource( 1 )
 position = Vector2( 22.4151, -50.4163 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.5, -24 )
+position = Vector2( -9.22301, -24.4784 )
 texture = ExtResource( 3 )
 hframes = 12
 
@@ -26,6 +26,7 @@ hframes = 12
 shape = SubResource( 1 )
 
 [node name="Range" type="Area2D" parent="."]
+visible = false
 
 [node name="RangeSphere" type="CollisionShape2D" parent="Range"]
 shape = SubResource( 2 )
