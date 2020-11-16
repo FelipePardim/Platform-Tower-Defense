@@ -75,6 +75,7 @@ current = true
 [node name="Pause" type="Control" parent="Camera2D"]
 pause_mode = 2
 visible = false
+light_mask = 524288
 margin_left = -90.0646
 margin_top = -82.6931
 margin_right = -50.0646
@@ -122,6 +123,7 @@ focus_neighbour_bottom = NodePath("../Button2")
 text = "Resume"
 script = ExtResource( 9 )
 reference_path = "res://Game.tscn"
+start_focused = true
 
 [node name="Button2" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_top = 24.0
