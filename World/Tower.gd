@@ -3,10 +3,12 @@ extends StaticBody2D
 export (PackedScene) var Bullet
 onready var firePosition = $FirePosition
 onready var timer = $Timer
+onready var animationPlayer = $AnimationPlayer
 
 var enemies = []
 
 func shoot():
+	animationPlayer.play("Fire")
 	var b = Bullet.instance()
 	self.add_child(b)
 	b.transform = $FirePosition.transform
