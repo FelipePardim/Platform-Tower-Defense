@@ -9,6 +9,6 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("PlayerConstructionHitBox"):
 		var tower = Tower.instance()
 		owner.add_child(tower)
-		tower.global_position = global_position
-		#queue_free()
+		tower.global_position = $Position2D.global_position
+		queue_free()
 	

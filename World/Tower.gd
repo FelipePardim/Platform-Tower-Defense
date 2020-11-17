@@ -1,18 +1,15 @@
 extends StaticBody2D
 
-export (PackedScene) var Projectile
+export (PackedScene) var Bullet
 onready var firePosition = $FirePosition
 onready var timer = $Timer
 
 var enemies = []
 
 func shoot():
-	print(timer.wait_time)
-	if timer.wait_time <= 0.1:
-		var b = Projectile.instance()
-		owner.add_child(b)
-		b.transform = $FirePosition.global_transform
-		timer.start(0.1)
+	var b = Bullet.instance()
+	self.add_child(b)
+	b.transform = $FirePosition.transform
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_home"):
