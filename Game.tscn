@@ -98,16 +98,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
+[node name="Resume" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_right = 74.0
 margin_bottom = 20.0
 focus_neighbour_top = NodePath("../Button3")
 focus_neighbour_bottom = NodePath("../Button2")
 text = "Resume"
 script = ExtResource( 9 )
-reference_path = "res://Game.tscn"
+reference_path = "res://Menu/Pause.gd"
 
-[node name="Button2" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
+[node name="Restart" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_top = 24.0
 margin_right = 74.0
 margin_bottom = 44.0
@@ -117,7 +117,7 @@ text = "Restart"
 script = ExtResource( 9 )
 reference_path = "res://Game.tscn"
 
-[node name="Button3" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
+[node name="ExitGame" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_top = 48.0
 margin_right = 74.0
 margin_bottom = 68.0
@@ -146,3 +146,5 @@ position = Vector2( 90.0646, 82.6931 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
+[connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Resume" to="Camera2D/Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Restart" to="Camera2D/Pause" method="_on_Restart_pressed"]
