@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World/Tower.gd" type="Script" id=1]
 [ext_resource path="res://World/Projectile.tscn" type="PackedScene" id=2]
@@ -26,6 +26,37 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.225 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fire_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 0.1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.08 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
 
 [node name="Tower" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -38,7 +69,7 @@ position = Vector2( 12, -76 )
 position = Vector2( 2, -50 )
 texture = ExtResource( 3 )
 hframes = 12
-frame = 11
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -26 )
@@ -56,5 +87,6 @@ wait_time = 0.01
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fire = SubResource( 3 )
+anims/Idle = SubResource( 4 )
 [connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
