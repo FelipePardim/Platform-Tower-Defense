@@ -15,14 +15,16 @@ var state = IDLE
 
 func shoot():
 	var b = Bullet.instance()
-	#var target = enemies[0]
 	self.add_child(b)
-	b.transform = $FirePosition.transform
-	#b.position.move_toward(enemies[0].position, 8)
-	#b.position = lerp($FirePosition.position, target.position, 10)
+	
+	# Target enemy
+	var target = enemies[enemies.size() - 1]
+	b.position = $FirePosition.position
+	b.rotation = b.get_angle_to(target.position)
 
 func _physics_process(delta):
-	firePosition.look_at(get_global_mouse_position())
+	# Aiming with mouse
+	#firePosition.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("ui_home"):
 		state = SHOOTING
 		shoot()
@@ -34,7 +36,8 @@ func _physics_process(delta):
 	
 func _on_Range_body_entered(body):
 	if body.is_in_group("Enemies"):
-		enemies.append(body.get_parent())
+		enemies.append(body)
+		state = SHOOTING
 		shoot()
 
 func _on_Range_body_exited(body):
