@@ -101,18 +101,19 @@ __meta__ = {
 [node name="Resume" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_right = 74.0
 margin_bottom = 20.0
-focus_neighbour_top = NodePath("../Button3")
-focus_neighbour_bottom = NodePath("../Button2")
+focus_neighbour_top = NodePath("../ExitGame")
+focus_neighbour_bottom = NodePath("../Restart")
 text = "Resume"
 script = ExtResource( 9 )
 reference_path = "res://Menu/Pause.gd"
+start_focused = true
 
 [node name="Restart" type="Button" parent="Camera2D/Pause/Panel/VBoxContainer"]
 margin_top = 24.0
 margin_right = 74.0
 margin_bottom = 44.0
-focus_neighbour_top = NodePath("../Button")
-focus_neighbour_bottom = NodePath("../Button3")
+focus_neighbour_top = NodePath("../Resume")
+focus_neighbour_bottom = NodePath("../ExitGame")
 text = "Restart"
 script = ExtResource( 9 )
 reference_path = "res://Game.tscn"
@@ -121,8 +122,8 @@ reference_path = "res://Game.tscn"
 margin_top = 48.0
 margin_right = 74.0
 margin_bottom = 68.0
-focus_neighbour_top = NodePath("../Button2")
-focus_neighbour_bottom = NodePath("../Button")
+focus_neighbour_top = NodePath("../Restart")
+focus_neighbour_bottom = NodePath("../Resume")
 text = "Exit game"
 script = ExtResource( 9 )
 
