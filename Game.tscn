@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/ConstructionLocal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/IceTower.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menu/Pause.gd" type="Script" id=8]
 [ext_resource path="res://Menu/mmenuNewGame.gd" type="Script" id=9]
 
@@ -147,5 +148,8 @@ position = Vector2( 90.0646, 82.6931 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="IceTower" parent="." instance=ExtResource( 7 )]
+position = Vector2( 29.4147, 143.393 )
 [connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Resume" to="Camera2D/Pause" method="_on_Resume_pressed"]
 [connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Restart" to="Camera2D/Pause" method="_on_Restart_pressed"]
