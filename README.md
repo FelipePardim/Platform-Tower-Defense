@@ -80,23 +80,35 @@ This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defen
 <h2 id="authors">
     👨‍💻 Authors:
 </h2>
-<div display="flex" justify-content="space-between" align="center">
-<a href="https://github.com/FelipePardim" margin="10px">
-    <img src="https://img.shields.io/badge/GitHub-FelipePardim-6f42c1?logo=github"/>
-</a>
-<a alt="Felipe Pardim" href="https://www.linkedin.com">
-    <img src="https://img.shields.io/badge/LinkedIn-Felipe%20Pardim-blue?logo=linkedin"/>
-</a>&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/Ltrizzini">
-    <img src="https://img.shields.io/badge/GitHub-Ltrizzini-6f42c1?logo=github"/>
-</a>
-<a href="https://www.linkedin.com">
-    <img src="https://img.shields.io/badge/LinkedIn-Lucas%20Trizzini-blue?logo=linkedin"/>
-</a>&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/LuisDutra">
-    <img src="https://img.shields.io/badge/GitHub-LuisDutra-6f42c1?logo=github"/>
-</a>
-<a href="https://www.linkedin.com">
-    <img src="https://img.shields.io/badge/LinkedIn-Luis%20Dutra-blue?logo=linkedin"/>
-</a>
+<div style="
+    justify-content: space-between; 
+    display: flex; 
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 30px"
+>
+    <div>    
+        <a href="https://github.com/FelipePardim" margin="10px">
+            <img src="https://img.shields.io/badge/GitHub-FelipePardim-6f42c1?logo=github"/>
+        </a>
+        <a alt="Felipe Pardim" href="https://www.linkedin.com">
+            <img src="https://img.shields.io/badge/LinkedIn-Felipe%20Pardim-blue?logo=linkedin"/>
+        </a>
+    </div>
+    <div>
+        <a href="https://github.com/Ltrizzini">
+            <img src="https://img.shields.io/badge/GitHub-Ltrizzini-6f42c1?logo=github"/>
+        </a>
+        <a href="https://www.linkedin.com">
+            <img src="https://img.shields.io/badge/LinkedIn-Lucas%20Trizzini-blue?logo=linkedin"/>
+        </a>
+    </div>
+        <div>
+        <a href="https://github.com/LuisDutra">
+            <img src="https://img.shields.io/badge/GitHub-LuisDutra-6f42c1?logo=github"/>
+        </a>
+        <a href="https://www.linkedin.com">
+            <img src="https://img.shields.io/badge/LinkedIn-Luis%20Dutra-blue?logo=linkedin"/>
+        </a>
+    </div>
 </div>
