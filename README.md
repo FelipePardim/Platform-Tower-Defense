@@ -91,7 +91,7 @@ This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defen
         <a href="https://github.com/FelipePardim" margin="10px">
             <img src="https://img.shields.io/badge/GitHub-FelipePardim-6f42c1?logo=github"/>
         </a>
-        <a alt="Felipe Pardim" href="https://www.linkedin.com">
+        <a alt="Felipe Pardim" href="www.linkedin.com/in/felipe-pardim">
             <img src="https://img.shields.io/badge/LinkedIn-Felipe%20Pardim-blue?logo=linkedin"/>
         </a>
     </div>
@@ -107,7 +107,7 @@ This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defen
         <a href="https://github.com/LuisDutra">
             <img src="https://img.shields.io/badge/GitHub-LuisDutra-6f42c1?logo=github"/>
         </a>
-        <a href="https://www.linkedin.com">
+        <a href="https://www.linkedin.com/mwlite/in/luisviniciusdutra">
             <img src="https://img.shields.io/badge/LinkedIn-Luis%20Dutra-blue?logo=linkedin"/>
         </a>
     </div>
