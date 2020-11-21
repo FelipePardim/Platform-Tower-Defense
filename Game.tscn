@@ -2,7 +2,7 @@
 
 [ext_resource path="res://World/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Tower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Towers/BowTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/IceTower.tscn" type="PackedScene" id=7]
@@ -130,10 +130,10 @@ position = Vector2( 90.0646, 82.6931 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="Tower" parent="." instance=ExtResource( 3 )]
-position = Vector2( -219.948, 143.98 )
+[node name="IceTower" parent="." instance=ExtResource( 7 )]
+position = Vector2( 68.173, 143.088 )
 
-[node name="Tower" parent="Tower" instance=ExtResource( 7 )]
-position = Vector2( 293.857, -4.89929 )
+[node name="BowTower" parent="." instance=ExtResource( 3 )]
+position = Vector2( -146.301, 144.413 )
 [connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Resume" to="Camera2D/Pause" method="_on_Resume_pressed"]
 [connection signal="pressed" from="Camera2D/Pause/Panel/VBoxContainer/Restart" to="Camera2D/Pause" method="_on_Restart_pressed"]
