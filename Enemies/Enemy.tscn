@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Joystick.png" type="Texture" id=2]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.71012
 height = 12.3917
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 15.9545
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.52944
+height = 14.4559
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( -0.580353, -14.9876 )
@@ -27,4 +29,9 @@ shape = SubResource( 1 )
 collision_layer = 2
 
 [node name="HurtBoxShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0.693874, 1.14477 )
 shape = SubResource( 2 )
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
