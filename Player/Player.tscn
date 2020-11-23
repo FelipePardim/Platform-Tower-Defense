@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playersheet.png" type="Texture" id=2]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0
@@ -411,3 +412,7 @@ parameters/Walk/blend_position = Vector2( -0.984894, 0.0258621 )
 position = Vector2( 19.9924, -0.285488 )
 shape = SubResource( 39 )
 disabled = true
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+max_health = 7
+max_mana = 6

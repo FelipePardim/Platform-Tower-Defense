@@ -13,6 +13,7 @@ onready var animationTree = $AnimationTree
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
 onready var constructionBox = $ConstructionHitbox
+onready var playerStats = $Stats
 
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -55,7 +56,10 @@ func get_input():
 func _physics_process(delta):
 	match state:
 		BUILD:
-		 build()
+			build()
+			print(playerStats.mana)
+			print(playerStats.health)
+			print(playerStats.coin)
 		MOVE:
 			get_input()
 			# Gravity pushing the player
