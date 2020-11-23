@@ -23,7 +23,5 @@ func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Projectiles"):
 		if enemyStats.health > 0:
 			enemyStats.health -= area.damage
-			print(area)
-		
-		if enemyStats.health <= 0:
+		else:
 			queue_free()
