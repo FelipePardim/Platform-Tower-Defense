@@ -99,11 +99,11 @@ This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defen
         <a href="https://github.com/Ltrizzini">
             <img src="https://img.shields.io/badge/GitHub-Ltrizzini-6f42c1?logo=github"/>
         </a>
-        <a href="https://www.linkedin.com">
+        <a href="https://www.linkedin.com/in/lucas-trizzini-b8a127150/">
             <img src="https://img.shields.io/badge/LinkedIn-Lucas%20Trizzini-blue?logo=linkedin"/>
         </a>
     </div>
-        <div>
+    <div>
         <a href="https://github.com/LuisDutra">
             <img src="https://img.shields.io/badge/GitHub-LuisDutra-6f42c1?logo=github"/>
         </a>
