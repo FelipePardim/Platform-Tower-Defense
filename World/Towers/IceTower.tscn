@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/Tower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Towers/icetower-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://World/ProjectileIce.tscn" type="PackedScene" id=3]
+
+[node name="IceTower" type="Node2D"]
+
+[node name="Tower" parent="." instance=ExtResource( 1 )]
+Bullet = ExtResource( 3 )
+
+[node name="Sprite" parent="Tower" index="1"]
+texture = ExtResource( 2 )
+hframes = 9
+
+[editable path="Tower"]
