@@ -1,8 +1,8 @@
 extends Node
 
 export(int) var max_health = 1 setget set_max_health
-export(int) var max_mana = 10 setget set_max_mana
-export(int) var max_coin = 999 setget set_max_coin
+export(int) var max_mana = 0 setget set_max_mana
+export(int) var max_coin = 0 setget set_max_coin
 var health = max_health setget set_health
 var mana = max_mana setget set_mana
 var coin = max_coin setget set_coin

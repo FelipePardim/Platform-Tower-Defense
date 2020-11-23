@@ -416,3 +416,4 @@ disabled = true
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 max_health = 7
 max_mana = 6
+max_coin = 999
