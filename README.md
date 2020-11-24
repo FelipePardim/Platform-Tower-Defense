@@ -102,12 +102,12 @@ This project is under [MIT](https://github.com/FelipePardim/Platform-Tower-Defen
     👨‍💻 Authors:
 </h2>
 <div style="
-    justify-content: space-between; 
-    display: flex; 
+    justify-content: space-between;
+    display: flex;
     margin-left: 90px;
     margin-right: 90px;
-    margin-top: 30px"
->
+    margin-top: 30px
+">
     <div>    
         <a href="https://github.com/FelipePardim" margin="10px">
             <img src="https://img.shields.io/badge/GitHub-FelipePardim-6f42c1?logo=github"/>
