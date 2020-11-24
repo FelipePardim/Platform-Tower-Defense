@@ -5,7 +5,7 @@ onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
 onready var towerStats = $Stats
-onready var MAX_RANGE = 280 # Max tower range
+export var MAX_RANGE = 10 # Max tower range
 
 enum {
 	SHOOTING
@@ -16,6 +16,7 @@ var enemies = []
 var state = IDLE
 
 func _ready():
+	add_to_group("Towers")
 	towerStats.health = 10
 
 func shoot():
@@ -63,3 +64,14 @@ func fire_animation_finished():
 func _on_Timer_timeout():
 	shoot()
 	timer.start(1)
+
+
+func _on_HurtBox_area_entered(area):
+	if area.is_in_group("EnemyHitBox"):
+		towerStats.health -= area.damage
+		if towerStats.health <= 0:
+			queue_free()
+			# play demolition animation and sound
+		else:
+			pass
+			# play hit animation and sound

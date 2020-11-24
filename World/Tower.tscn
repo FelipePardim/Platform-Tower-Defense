@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World/Tower.gd" type="Script" id=1]
 [ext_resource path="res://World/Projectile.tscn" type="PackedScene" id=2]
@@ -59,7 +59,12 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[node name="Tower" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 13, 31 )
+
+[node name="Tower" type="StaticBody2D" groups=[
+"Towers",
+]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
@@ -74,11 +79,15 @@ texture = ExtResource( 3 )
 hframes = 12
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Towers",
+]]
+visible = false
 position = Vector2( -1, -26 )
 shape = SubResource( 1 )
 
 [node name="Range" type="Area2D" parent="."]
+visible = false
 
 [node name="RangeSphere" type="CollisionShape2D" parent="Range"]
 position = Vector2( 0, -40 )
@@ -93,6 +102,13 @@ anims/Idle = SubResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 10
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="HitBoxShape" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( -1, -31 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
