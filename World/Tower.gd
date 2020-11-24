@@ -4,7 +4,8 @@ export (PackedScene) var Bullet
 onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
-var MAX_RANGE = 280 # Max tower range
+onready var towerStats = $Stats
+onready var MAX_RANGE = 280 # Max tower range
 
 enum {
 	SHOOTING
@@ -13,6 +14,9 @@ enum {
 
 var enemies = []
 var state = IDLE
+
+func _ready():
+	towerStats.health = 10
 
 func shoot():
 	if enemies.size() != 0:
