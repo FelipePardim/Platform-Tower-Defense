@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Joystick.png" type="Texture" id=2]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/HitBox.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.71012
@@ -11,6 +12,10 @@ height = 12.3917
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.52944
 height = 14.4559
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 7.51694
+height = 9.74985
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( -0.580353, -14.9876 )
@@ -26,12 +31,25 @@ position = Vector2( 0.529732, 0.92703 )
 shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
-[node name="HurtBoxShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0.693874, 1.14477 )
 shape = SubResource( 2 )
 
+[node name="HitBox" type="Area2D" parent="." groups=[
+"EnemyHitBox",
+]]
+script = ExtResource( 4 )
+
+[node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( -15.708, 1.01355 )
+shape = SubResource( 3 )
+
 [node name="Stats" parent="." instance=ExtResource( 3 )]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
-[connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
