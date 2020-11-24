@@ -57,9 +57,6 @@ func _physics_process(delta):
 	match state:
 		BUILD:
 			build()
-			print(playerStats.mana)
-			print(playerStats.health)
-			print(playerStats.coin)
 		MOVE:
 			get_input()
 			# Gravity pushing the player
