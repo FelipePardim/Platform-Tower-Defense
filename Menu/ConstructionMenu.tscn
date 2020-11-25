@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/blackBG.png" type="Texture" id=1]
+
+[node name="ConstructionMenu" type="Node2D"]
+
+[node name="blackBG" type="Sprite" parent="."]
+position = Vector2( 65.3266, 98.9768 )
+scale = Vector2( 0.101884, 0.303003 )
+texture = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 1.37361
+margin_top = 3.72186
+margin_right = 131.374
+margin_bottom = 191.722
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Guard Tower"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 130.0
+margin_bottom = 44.0
+text = "Magic Tower"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 130.0
+margin_bottom = 68.0
+text = "Ice Tower"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 130.0
+margin_bottom = 92.0
+text = "Bomb Tower"
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+margin_top = 96.0
+margin_right = 130.0
+margin_bottom = 116.0
+text = "Fire Tower"
+
+[node name="Button6" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 130.0
+margin_bottom = 140.0
+text = "Greed Tower"
+
+[node name="Button7" type="Button" parent="VBoxContainer"]
+margin_top = 144.0
+margin_right = 130.0
+margin_bottom = 164.0
+text = "Ligthning Tower"
+
+[node name="Button8" type="Button" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 130.0
+margin_bottom = 188.0
+text = "Bow Tower"
