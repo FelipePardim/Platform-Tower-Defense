@@ -10,7 +10,6 @@
 [ext_resource path="res://Scripts/Pause.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/mmenuNewGame.gd" type="Script" id=9]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
 

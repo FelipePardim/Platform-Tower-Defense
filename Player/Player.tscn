@@ -1,8 +1,10 @@
 [gd_scene load_steps=43 format=2]
 
-[ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Playersheet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Playersheet.png" type="Texture" id=2]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0
