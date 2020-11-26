@@ -7,8 +7,9 @@
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Projectile.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Menu/Pause.gd" type="Script" id=8]
-[ext_resource path="res://Menu/mmenuNewGame.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/mmenuNewGame.gd" type="Script" id=9]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
