@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-1f16d6b9f7fd2c514ca5bab9cce07fba.stex"
+path="res://.import/icetower-Sheet.png-8b1bf69179330a6d9534725627e48fee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Towers/arrow.png"
-dest_files=[ "res://.import/arrow.png-1f16d6b9f7fd2c514ca5bab9cce07fba.stex" ]
+source_file="res://Assets/icetower-Sheet.png"
+dest_files=[ "res://.import/icetower-Sheet.png-8b1bf69179330a6d9534725627e48fee.stex" ]
 
 [params]
 

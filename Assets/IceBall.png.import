@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grassblocks.png-a7ac049c25d1c63606eab739bea0c9f2.stex"
+path="res://.import/IceBall.png-5656afbe541f25baa86765498387520c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/grassblocks.png"
-dest_files=[ "res://.import/grassblocks.png-a7ac049c25d1c63606eab739bea0c9f2.stex" ]
+source_file="res://Assets/IceBall.png"
+dest_files=[ "res://.import/IceBall.png-5656afbe541f25baa86765498387520c.stex" ]
 
 [params]
 

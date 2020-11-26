@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brokentower.png-6f747ccbc1080912d5f9e46060d08354.stex"
+path="res://.import/grassblocks.png-080be65ced3713b49a531f975e50aee4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/brokentower.png"
-dest_files=[ "res://.import/brokentower.png-6f747ccbc1080912d5f9e46060d08354.stex" ]
+source_file="res://Assets/grassblocks.png"
+dest_files=[ "res://.import/grassblocks.png-080be65ced3713b49a531f975e50aee4.stex" ]
 
 [params]
 
