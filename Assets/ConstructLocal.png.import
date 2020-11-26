@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blackBG.png-dfdbf0c835758ce700aeebf10aa7d4db.stex"
+path="res://.import/ConstructLocal.png-a712b1088c1a11c737d4d02ebd5f002d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/blackBG.png"
-dest_files=[ "res://.import/blackBG.png-dfdbf0c835758ce700aeebf10aa7d4db.stex" ]
+source_file="res://Assets/ConstructLocal.png"
+dest_files=[ "res://.import/ConstructLocal.png-a712b1088c1a11c737d4d02ebd5f002d.stex" ]
 
 [params]
 

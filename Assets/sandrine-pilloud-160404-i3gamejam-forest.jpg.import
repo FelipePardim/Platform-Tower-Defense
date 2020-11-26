@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mining.png-aa96b1dc25c72296870dab4d824344ff.stex"
+path="res://.import/sandrine-pilloud-160404-i3gamejam-forest.jpg-36920f7c5cf4b0506f7a3fefe814e514.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/mining.png"
-dest_files=[ "res://.import/mining.png-aa96b1dc25c72296870dab4d824344ff.stex" ]
+source_file="res://Assets/sandrine-pilloud-160404-i3gamejam-forest.jpg"
+dest_files=[ "res://.import/sandrine-pilloud-160404-i3gamejam-forest.jpg-36920f7c5cf4b0506f7a3fefe814e514.stex" ]
 
 [params]
 
