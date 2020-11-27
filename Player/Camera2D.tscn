@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/mmenuNewGame.gd" type="Script" id=3]
+[ext_resource path="res://World/Watch.tscn" type="PackedScene" id=4]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2( -187.273, 126.938 )
+current = true
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -90.0646
+margin_top = -82.6931
+margin_right = -50.0646
+margin_bottom = -42.6931
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Pause"]
+margin_left = 42.0
+margin_top = 18.0
+margin_right = 147.0
+margin_bottom = 147.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pause/Panel"]
+margin_left = 5.66324
+margin_top = 8.49486
+margin_right = 98.6632
+margin_bottom = 22.4949
+text = "GAME MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/Panel"]
+margin_left = 15.5842
+margin_top = 40.3597
+margin_right = 89.5842
+margin_bottom = 127.36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="Pause/Panel/VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../ExitGame")
+focus_neighbour_bottom = NodePath("../Restart")
+text = "Resume"
+script = ExtResource( 3 )
+reference_path = "res://Menu/Pause.gd"
+start_focused = true
+
+[node name="Restart" type="Button" parent="Pause/Panel/VBoxContainer"]
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 44.0
+focus_neighbour_top = NodePath("../Resume")
+focus_neighbour_bottom = NodePath("../ExitGame")
+text = "Restart"
+script = ExtResource( 3 )
+reference_path = "res://Game.tscn"
+
+[node name="ExitGame" type="Button" parent="Pause/Panel/VBoxContainer"]
+margin_top = 48.0
+margin_right = 74.0
+margin_bottom = 68.0
+focus_neighbour_top = NodePath("../Restart")
+focus_neighbour_bottom = NodePath("../Resume")
+text = "Exit game"
+script = ExtResource( 3 )
+
+[node name="Watch" parent="." instance=ExtResource( 4 )]
+position = Vector2( 146.077, -79.2254 )
+[connection signal="pressed" from="Pause/Panel/VBoxContainer/Resume" to="Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/Panel/VBoxContainer/Restart" to="Pause" method="_on_Restart_pressed"]
