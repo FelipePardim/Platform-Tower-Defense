@@ -39,14 +39,14 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 32.3, 92.1 ),
+"times": PoolRealArray( 32.3, 90 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "change_enemy_spawn"
 }, {
 "args": [  ],
-"method": "change_enemy_spawn"
+"method": "pay_income"
 } ]
 }
 
@@ -58,7 +58,7 @@ texture = ExtResource( 1 )
 
 [node name="WatchPointer" type="Sprite" parent="Watch"]
 position = Vector2( 0.51174, -0.503881 )
-rotation = -1.5708
+rotation = 1.58075
 texture = ExtResource( 2 )
 offset = Vector2( -0.5, 0.5 )
 
@@ -66,3 +66,4 @@ offset = Vector2( -0.5, 0.5 )
 "anims/Day cycle" = SubResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.78985, 0.682353, 0.417763, 1 )

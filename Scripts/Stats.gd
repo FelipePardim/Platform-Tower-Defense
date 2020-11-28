@@ -3,9 +3,11 @@ extends Node
 export(int) var max_health = 1 setget set_max_health
 export(int) var max_mana = 0 setget set_max_mana
 export(int) var max_coin = 0 setget set_max_coin
+export(int) var max_level = 1 setget set_max_level
 var health = max_health setget set_health
 var mana = max_mana setget set_mana
-var coin = max_coin setget set_coin
+var coin = 0 setget set_coin
+var level = max_level setget set_level
 
 signal no_health
 signal health_changed(value)
@@ -35,7 +37,7 @@ func set_mana(value):
 	
 func set_max_coin(value):
 	max_coin = value
-	self.coin = min(coin, max_coin)
+	self.coin = 0
 	emit_signal("max_coin_changed", max_coin)
 
 func set_coin(value):
@@ -44,7 +46,19 @@ func set_coin(value):
 	if coin <= 0:
 		emit_signal("no_coin")
 
+func set_max_level(value):
+	max_level = value
+	self.level = min(level, max_level)
+	emit_signal("max_level_changed", max_level)
+	
+func set_level(value):
+	level = value
+	emit_signal("level_changed", level)
+	if level <= 0:
+		emit_signal("no_level")
+
 func _ready():
 	self.health = max_health
 	self.mana = max_mana
-	self.coin = max_coin
+	self.coin = 0
+	self.level = max_level
