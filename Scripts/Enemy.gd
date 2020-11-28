@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
-#export (int) var enemyDamage = 1
 export (int) var GRAVITY = 2000
 export (int) var MOVE_SPEED = -20
+
+# Enemy coin give to player when enemy dies
+export (int) var enemyBounty = 2
 
 #Moving variable
 var velocity = Vector2.ZERO
@@ -10,6 +12,10 @@ var velocity = Vector2.ZERO
 onready var enemyStats = $Stats
 onready var timer = $Timer
 onready var hitbox = $HitBox/HitBoxShape
+# Game root scene
+onready var game = get_tree().get_root().get_node("Game")
+# Player node
+onready var player = game.get_node("Player")
 
 func _ready():
 	add_to_group("Enemies")
@@ -25,6 +31,7 @@ func _on_HurtBox_area_entered(area):
 		if enemyStats.health > 0:
 			enemyStats.health -= area.damage
 		else:
+			player.playerStats.coin += enemyBounty
 			queue_free()
 
 

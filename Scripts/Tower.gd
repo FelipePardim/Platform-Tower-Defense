@@ -5,7 +5,7 @@ onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
 onready var towerStats = $Stats
-export var MAX_RANGE = 10 # Max tower range
+export var MAX_RANGE = 240 # Max tower range
 
 enum {
 	SHOOTING
@@ -34,7 +34,7 @@ func shoot():
 					closest_target = targets[i]
 					closest_target_distance = target_distance
 		# Shooting mechanic and animation
-		if closest_target != null and enemies.size() >= 2:
+		if closest_target != null:
 			self.add_child(b)
 			state = SHOOTING
 			# Getting the angle to the closest target and shooting
