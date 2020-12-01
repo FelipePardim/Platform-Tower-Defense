@@ -5,7 +5,7 @@
 [ext_resource path="res://World/Towers/BowTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Projectile.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/background.jpg" type="Texture" id=6]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=9]
 [ext_resource path="res://World/BuildingSite.tscn" type="PackedScene" id=10]
@@ -53,6 +53,13 @@ points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.33635
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 50, 48 )
@@ -67,21 +74,17 @@ position = Vector2( -312.478, 93.1772 )
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 379.523, -1.78178 )
 
-[node name="Camera2D" parent="." instance=ExtResource( 8 )]
-
-[node name="BowTower" parent="." instance=ExtResource( 3 )]
-position = Vector2( 28.3257, 143.58 )
-
-[node name="Projectile" parent="." instance=ExtResource( 7 )]
-position = Vector2( -283.774, 107.53 )
-rotation = 1.5708
-
 [node name="ConstructionLocal" parent="." instance=ExtResource( 10 )]
 position = Vector2( -114.122, 91.59 )
 Tower = ExtResource( 3 )
+
+[node name="BowTower" parent="." instance=ExtResource( 3 )]
+position = Vector2( 28.3257, 143.58 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -187.273, 126.938 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
