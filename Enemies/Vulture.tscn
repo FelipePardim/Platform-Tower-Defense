@@ -47,6 +47,6 @@ position = Vector2( 9.42459, 9.08178 )
 position = Vector2( -11.9379, 1.21197 )
 
 [node name="Stats" parent="Enemy" index="4"]
-max_health = 15
+max_health = 3
 
 [editable path="Enemy"]
