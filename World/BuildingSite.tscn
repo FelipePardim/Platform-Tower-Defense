@@ -1,10 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/brokentower.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/ConstructionLocal.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/BuildingSite.gd" type="Script" id=2]
 [ext_resource path="res://World/Tower.tscn" type="PackedScene" id=3]
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.8853, 10 )

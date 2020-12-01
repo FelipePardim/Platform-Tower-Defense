@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Portal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Portal.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Hyena.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Vulture.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Snake.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.8766, 49.341 )
@@ -11,6 +14,9 @@ extents = Vector2( 23.8766, 49.341 )
 position = Vector2( 252.229, 56.9506 )
 script = ExtResource( 2 )
 Enemy = ExtResource( 3 )
+Vulture = ExtResource( 5 )
+Hyena = ExtResource( 4 )
+Snake = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

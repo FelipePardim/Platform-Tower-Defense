@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 export (PackedScene) var Bullet
+export (PackedScene) var ConstructionLocal
 onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
@@ -70,6 +71,8 @@ func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyHitBox"):
 		towerStats.health -= area.damage
 		if towerStats.health <= 0:
+			var buildingSite = ConstructionLocal.instance()
+			self.add_child(buildingSite)
 			queue_free()
 			# play demolition animation and sound
 		else:
