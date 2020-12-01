@@ -12,6 +12,7 @@ var velocity = Vector2.ZERO
 onready var enemyStats = $Stats
 onready var timer = $Timer
 onready var hitbox = $HitBox/HitBoxShape
+onready var animatedSprite = $AnimatedSprite
 # Game root scene
 onready var game = get_tree().get_root().get_node("Game")
 # Player node
@@ -19,6 +20,7 @@ onready var player = game.get_node("Player")
 
 func _ready():
 	add_to_group("Enemies")
+	animatedSprite.play("default")
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta

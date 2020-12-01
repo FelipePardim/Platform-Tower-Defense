@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Vulture.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 0, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="Vulture" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+GRAVITY = 0
+MOVE_SPEED = -30
+enemyBounty = 5
+
+[node name="AnimatedSprite" parent="Enemy" index="0"]
+frames = SubResource( 5 )
+
+[node name="EnemyCollision" parent="Enemy" index="1"]
+position = Vector2( 9.06201, 10.4514 )
+
+[node name="HurtBoxShape" parent="Enemy/HurtBox" index="0"]
+position = Vector2( 9.42459, 9.08178 )
+
+[node name="HitBoxShape" parent="Enemy/HitBox" index="0"]
+position = Vector2( -11.9379, 1.21197 )
+
+[node name="Stats" parent="Enemy" index="4"]
+max_health = 15
+
+[editable path="Enemy"]
