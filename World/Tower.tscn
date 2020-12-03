@@ -1,10 +1,93 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/Tower.gd" type="Script" id=1]
-[ext_resource path="res://World/Projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/vigilancetower-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/HurtBox.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends StaticBody2D
+
+export (PackedScene) var Bullet
+export (PackedScene) var ConstructionLocal
+onready var firePosition = $FirePosition
+onready var timer = $Timer
+onready var animationPlayer = $AnimationPlayer
+onready var towerStats = $Stats
+export var MAX_RANGE = 280 # Max tower range
+export var COOLDOWN = 1 # Tower cool down
+
+enum {
+	SHOOTING
+	IDLE
+}
+
+var enemies = []
+var state = IDLE
+
+func _ready():
+	add_to_group(\"Towers\")
+	towerStats.health = 10
+
+func shoot():
+	if enemies.size() != 0:
+		var b = Bullet.instance()
+		b.position = firePosition.position
+		var targets = enemies
+		var closest_target
+		var closest_target_distance = 999
+		# Prioritazing target by distance
+		for i in range(0, targets.size()):
+			if targets[i] != null:
+				var target_distance = b.get_global_position().distance_to(targets[i].get_global_position())
+				if target_distance < closest_target_distance and target_distance < MAX_RANGE:
+					closest_target = targets[i]
+					closest_target_distance = target_distance
+		# Shooting mechanic and animation
+		if closest_target != null:
+			self.add_child(b)
+			state = SHOOTING
+			print(closest_target_distance)
+			# Getting the angle to the closest target and shooting
+			b.rotation = b.get_angle_to(closest_target.get_global_position())
+
+func _physics_process(_delta):
+	# Aiming with mouse
+	#firePosition.look_at(get_global_mouse_position())
+		
+	if state == SHOOTING:
+		animationPlayer.play(\"Fire\")
+	elif state == IDLE:
+		animationPlayer.play(\"Idle\")
+	
+func _on_Range_body_entered(body):
+	if body.is_in_group(\"Enemies\"):
+		enemies.append(body)
+
+func _on_Range_body_exited(body):
+	if body.is_in_group(\"Enemies\"):
+		enemies.erase(body.get_parent())
+		
+func fire_animation_finished():
+	state = IDLE
+
+
+func _on_Timer_timeout():
+	shoot()
+	timer.start(COOLDOWN)
+
+
+func _on_HurtBox_area_entered(area):
+	if area.is_in_group(\"EnemyHitBox\"):
+		towerStats.health -= area.damage
+		if towerStats.health <= 0:
+			var buildingSite = ConstructionLocal.instance()
+			self.add_child(buildingSite)
+			queue_free()
+			# play demolition animation and sound
+		else:
+			pass
+			# play hit animation and sound
+"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.2173, 25.9666 )
@@ -65,8 +148,7 @@ tracks/0/keys = {
 ]]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource( 1 )
-Bullet = ExtResource( 2 )
+script = SubResource( 5 )
 
 [node name="FirePosition" type="Position2D" parent="."]
 position = Vector2( 12, -76 )
@@ -85,10 +167,9 @@ position = Vector2( -1, -26 )
 shape = SubResource( 1 )
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 
 [node name="RangeSphere" type="CollisionShape2D" parent="Range"]
-position = Vector2( 0, -40 )
+position = Vector2( -1, -40 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]

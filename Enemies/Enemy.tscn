@@ -12,7 +12,9 @@ radius = 8.40813
 [sub_resource type="CircleShape2D" id=3]
 radius = 5.34526
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=[
+"Enemies",
+]]
 position = Vector2( 0.0383642, 0.126808 )
 collision_layer = 2
 collision_mask = 2147483651

@@ -8,6 +8,7 @@
 
 [node name="Tower" parent="." instance=ExtResource( 1 )]
 Bullet = ExtResource( 3 )
+COOLDOWN = 5
 
 [node name="FirePosition" parent="Tower" index="0"]
 position = Vector2( -0.454678, -70.7559 )

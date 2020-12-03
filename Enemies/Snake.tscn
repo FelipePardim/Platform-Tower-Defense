@@ -28,13 +28,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.1967, 7.09749 )
+extents = Vector2( 14.8417, 8.2655 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 14.9503, 9.56777 )
+extents = Vector2( 14.1521, 8.28165 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 5.66335, 6.65095 )
+extents = Vector2( 3.73168, 3.59964 )
 
 [node name="Snake" type="Node2D"]
 
@@ -44,15 +44,15 @@ extents = Vector2( 5.66335, 6.65095 )
 frames = SubResource( 5 )
 
 [node name="EnemyCollision" parent="Enemy" index="1"]
-position = Vector2( 9.37304, 16.528 )
+position = Vector2( 9.70331, 16.4058 )
 shape = SubResource( 6 )
 
 [node name="HurtBoxShape" parent="Enemy/HurtBox" index="0"]
-position = Vector2( 9.12005, 14.4932 )
+position = Vector2( 9.26729, 16.5543 )
 shape = SubResource( 7 )
 
 [node name="HitBoxShape" parent="Enemy/HitBox" index="0"]
-position = Vector2( -11.208, 12.7635 )
+position = Vector2( -8.84565, 13.1572 )
 shape = SubResource( 8 )
 
 [editable path="Enemy"]

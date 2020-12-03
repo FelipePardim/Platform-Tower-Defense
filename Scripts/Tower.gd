@@ -6,7 +6,8 @@ onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
 onready var towerStats = $Stats
-export var MAX_RANGE = 240 # Max tower range
+export var MAX_RANGE = 280 # Max tower range
+export var COOLDOWN = 1 # Tower cool down
 
 enum {
 	SHOOTING
@@ -39,7 +40,7 @@ func shoot():
 			self.add_child(b)
 			state = SHOOTING
 			# Getting the angle to the closest target and shooting
-			b.rotation = b.get_angle_to(closest_target.position)
+			b.rotation = b.get_angle_to(closest_target.get_global_position())
 
 func _physics_process(_delta):
 	# Aiming with mouse
@@ -64,7 +65,7 @@ func fire_animation_finished():
 
 func _on_Timer_timeout():
 	shoot()
-	timer.start(1)
+	timer.start(COOLDOWN)
 
 
 func _on_HurtBox_area_entered(area):
