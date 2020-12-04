@@ -9,11 +9,14 @@ export (int) var speed = 150
 export (int) var jump_speed = -500
 export (int) var gravity = 2000
 
+#const buildingSound = preload ("res://Music & Sound/BuildingSound.tscn")
+
 onready var animationTree = $AnimationTree
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
 onready var constructionBox = $ConstructionHitbox
 onready var playerStats = $Stats
+onready var audioStream = $AudioStreamPlayer
 
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -57,13 +60,14 @@ func get_input():
 
 func _physics_process(delta):
 	match state:
-		BUILD:
-			build()
 		MOVE:
 			get_input()
 			# Gravity pushing the player
 			velocity.y += gravity * delta
 			velocity = move_and_slide(velocity, Vector2.UP)
+		BUILD:
+			build()
+			build()
 			
 func build():
 	velocity = Vector2.ZERO
@@ -71,5 +75,12 @@ func build():
 	velocity.x = lerp(velocity.x, 0, friction)
 	animationState.travel("Build")
 
+func build_animation_started():
+	# Sound effect
+	audioStream.play()
+	#var sound = buildingSound.instance()
+	#get_tree().current_scene.add_child(sound)
+
 func build_animation_finished():
 	state = MOVE
+	

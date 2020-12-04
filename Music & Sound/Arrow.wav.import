@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Arrow.wav-65b334d8e721557a1839e0f3fb6ac46b.sample"
+
+[deps]
+
+source_file="res://Music & Sound/Arrow.wav"
+dest_files=[ "res://.import/Arrow.wav-65b334d8e721557a1839e0f3fb6ac46b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

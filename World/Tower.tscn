@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Music & Sound/Arrow.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/vigilancetower-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/HurtBox.tscn" type="PackedScene" id=5]
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=6]
 script/source = "extends StaticBody2D
 
 export (PackedScene) var Bullet
@@ -12,6 +13,7 @@ export (PackedScene) var ConstructionLocal
 onready var firePosition = $FirePosition
 onready var timer = $Timer
 onready var animationPlayer = $AnimationPlayer
+onready var audioPlayer = $AudioStreamPlayer
 onready var towerStats = $Stats
 export var MAX_RANGE = 280 # Max tower range
 export var COOLDOWN = 1 # Tower cool down
@@ -56,6 +58,7 @@ func _physics_process(_delta):
 		
 	if state == SHOOTING:
 		animationPlayer.play(\"Fire\")
+		audioPlayer.play()
 	elif state == IDLE:
 		animationPlayer.play(\"Idle\")
 	
@@ -89,14 +92,13 @@ func _on_HurtBox_area_entered(area):
 			# play hit animation and sound
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 13.2173, 25.9666 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=8]
 radius = 201.193
 
-[sub_resource type="Animation" id=3]
-resource_name = "Fire"
+[sub_resource type="Animation" id=9]
 length = 0.24
 step = 0.025
 tracks/0/type = "value"
@@ -126,8 +128,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Idle"
+[sub_resource type="Animation" id=5]
 length = 0.1
 step = 0.02
 tracks/0/type = "value"
@@ -148,7 +149,7 @@ tracks/0/keys = {
 ]]
 collision_layer = 0
 collision_mask = 0
-script = SubResource( 5 )
+script = SubResource( 6 )
 
 [node name="FirePosition" type="Position2D" parent="."]
 position = Vector2( 12, -76 )
@@ -164,25 +165,29 @@ frame = 1
 ]]
 visible = false
 position = Vector2( -1, -26 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="Range" type="Area2D" parent="."]
 
 [node name="RangeSphere" type="CollisionShape2D" parent="Range"]
 position = Vector2( -1, -40 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fire = SubResource( 3 )
-anims/Idle = SubResource( 4 )
+anims/Fire = SubResource( 9 )
+anims/Idle = SubResource( 5 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 10
 
 [node name="HurtBox" parent="." instance=ExtResource( 5 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -13.765
 [connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
