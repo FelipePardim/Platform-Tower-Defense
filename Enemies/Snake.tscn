@@ -28,7 +28,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.8417, 8.2655 )
+extents = Vector2( 12.0523, 2.59492 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 14.1521, 8.28165 )
@@ -44,7 +44,7 @@ extents = Vector2( 3.73168, 3.59964 )
 frames = SubResource( 5 )
 
 [node name="EnemyCollision" parent="Enemy" index="1"]
-position = Vector2( 9.70331, 16.4058 )
+position = Vector2( 10.9112, 21.381 )
 shape = SubResource( 6 )
 
 [node name="HurtBoxShape" parent="Enemy/HurtBox" index="0"]
