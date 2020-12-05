@@ -11,13 +11,15 @@ export (int) var gravity = 2000
 
 #const buildingSound = preload ("res://Music & Sound/BuildingSound.tscn")
 
+onready var particle = $Particles2D
 onready var animationTree = $AnimationTree
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
+onready var audioStream = $AudioStreamPlayer
 onready var constructionBox = $ConstructionHitbox
 onready var playerStats = $Stats
-onready var audioStream = $AudioStreamPlayer
 
+var buildingTower = "IceTower"
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
 var state = MOVE
@@ -40,9 +42,10 @@ func get_input():
 		if input_vector == 1:
 			direction = Vector2.RIGHT
 			constructionBox.set_scale(Vector2.RIGHT)
+			particle.set_position(Vector2(12, 0))
 		else:
 			direction = Vector2.LEFT
-			constructionBox.set_scale(Vector2.LEFT)
+			particle.set_position(Vector2(-12, 0))
 	else:
 		# Function to leave the player in idle
 		animationTree.set("parameters/Idle/blend_position", direction)
@@ -78,9 +81,12 @@ func build():
 func build_animation_started():
 	# Sound effect
 	audioStream.play()
-	#var sound = buildingSound.instance()
-	#get_tree().current_scene.add_child(sound)
 
 func build_animation_finished():
 	state = MOVE
+	
+func hammer_particles():
+	particle.set_emitting(true)
+	particle.show()
+
 	
