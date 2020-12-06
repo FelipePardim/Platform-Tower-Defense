@@ -41,7 +41,7 @@ frames = SubResource( 5 )
 position = Vector2( 9.06201, 10.4514 )
 
 [node name="HurtBoxShape" parent="Enemy/HurtBox" index="0"]
-position = Vector2( 9.42459, 9.08178 )
+position = Vector2( 6.79679, 8.24088 )
 
 [node name="HitBoxShape" parent="Enemy/HitBox" index="0"]
 position = Vector2( -11.9379, 1.21197 )

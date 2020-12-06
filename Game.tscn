@@ -1,17 +1,13 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Towers/BowTower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/BuildingSite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Enemies/Hyena.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Vulture.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=9]
 [ext_resource path="res://Assets/background.jpg" type="Texture" id=10]
-[ext_resource path="res://Enemies/Snake.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Towers/IceTower.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
@@ -77,12 +73,6 @@ position = Vector2( -312.478, 93.1772 )
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 379.523, -1.78178 )
 
-[node name="BowTower" parent="." instance=ExtResource( 3 )]
-position = Vector2( -225.238, 143.246 )
-
-[node name="IceTower" parent="." instance=ExtResource( 12 )]
-position = Vector2( -20.1587, 144.891 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -176.153, 118.714 )
 
@@ -92,18 +82,5 @@ remote_path = NodePath("../../Camera2D")
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( -176.153, 118.714 )
 
-[node name="Snake" parent="." instance=ExtResource( 11 )]
-position = Vector2( -133.387, 114.437 )
-
-[node name="HitBox" parent="Snake/Enemy" index="3"]
-damage = 500
-
-[node name="Vulture" parent="." instance=ExtResource( 7 )]
-position = Vector2( 294, -40 )
-
-[node name="Hyena" parent="." instance=ExtResource( 6 )]
-position = Vector2( 358, -88 )
-
-[editable path="Snake"]
-
-[editable path="Snake/Enemy"]
+[node name="ConstructionLocal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 70.5732, 93.7691 )

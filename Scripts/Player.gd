@@ -17,8 +17,10 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
 onready var audioStream = $AudioStreamPlayer
 onready var constructionBox = $ConstructionHitbox
+onready var builZone = $ConstructionHitbox/BuildZone
 onready var playerStats = $Stats
 
+var canBuild = false
 var buildingTower = "IceTower"
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -45,6 +47,7 @@ func get_input():
 			particle.set_position(Vector2(12, 0))
 		else:
 			direction = Vector2.LEFT
+			constructionBox.set_scale(Vector2.LEFT)
 			particle.set_position(Vector2(-12, 0))
 	else:
 		# Function to leave the player in idle
@@ -59,7 +62,8 @@ func get_input():
 			animationState.travel("Jump")
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
-			state = BUILD
+			if canBuild == true:
+				state = BUILD
 
 func _physics_process(delta):
 	match state:
@@ -90,3 +94,11 @@ func hammer_particles():
 	particle.show()
 
 	
+
+
+func _on_BuildZone_body_entered(body):
+	canBuild = true
+
+
+func _on_BuildZone_body_exited(body):
+	canBuild = false
