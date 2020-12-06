@@ -8,6 +8,9 @@
 position = Vector2( -187.273, 126.938 )
 current = true
 
+[node name="Watch" parent="." instance=ExtResource( 4 )]
+position = Vector2( 146.077, -79.2254 )
+
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 visible = false
@@ -78,8 +81,5 @@ focus_neighbour_top = NodePath("../Restart")
 focus_neighbour_bottom = NodePath("../Resume")
 text = "Exit game"
 script = ExtResource( 3 )
-
-[node name="Watch" parent="." instance=ExtResource( 4 )]
-position = Vector2( 146.077, -79.2254 )
 [connection signal="pressed" from="Pause/Panel/VBoxContainer/Resume" to="Pause" method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause/Panel/VBoxContainer/Restart" to="Pause" method="_on_Restart_pressed"]

@@ -13,7 +13,7 @@ extents = Vector2( 13, 16 )
 [node name="ConstructionLocal" type="StaticBody2D"]
 position = Vector2( -1, -50 )
 script = ExtResource( 2 )
-Tower = ExtResource( 3 )
+bowTower = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2, 0 )

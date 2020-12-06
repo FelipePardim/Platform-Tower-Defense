@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/BuildingSite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/layers_fullcolor/sky_fc.png" type="Texture" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Towers/IceTower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/layers_fullcolor/grassy_mountains_fc.png" type="Texture" id=7]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=9]
-[ext_resource path="res://Assets/background.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/layers_fullcolor/far_mountains_fc.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
@@ -54,10 +56,45 @@ script = ExtResource( 9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Sky"]
+margin_left = -742.0
+margin_top = -152.0
+margin_right = 2714.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackMountains" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/BackMountains"]
+margin_left = -743.0
+margin_top = -152.0
+margin_right = 2714.0
+margin_bottom = 64.0
 texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontMountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/FrontMountains"]
+margin_left = -741.0
+margin_top = -152.0
+margin_right = 2714.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -65,22 +102,26 @@ cell_size = Vector2( 50, 48 )
 collision_layer = 33
 collision_mask = 33
 format = 1
-tile_data = PoolIntArray( 65542, 0, 0, 131077, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
+tile_data = PoolIntArray( 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0 )
 
 [node name="Castle" parent="." instance=ExtResource( 4 )]
-position = Vector2( -312.478, 93.1772 )
+position = Vector2( -431.319, 0.722275 )
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 379.523, -1.78178 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -176.153, 118.714 )
+position = Vector2( -32.2271, 33.2012 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( -176.153, 118.714 )
+position = Vector2( -32.2271, 33.2012 )
+limit_left = -500
+limit_right = 400
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
-[node name="ConstructionLocal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 70.5732, 93.7691 )
+[node name="IceTower" parent="." instance=ExtResource( 6 )]
+position = Vector2( 122.224, 48.0723 )
