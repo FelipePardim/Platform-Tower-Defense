@@ -30,7 +30,11 @@ func _physics_process(delta):
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Projectiles"):
 		if area.is_in_group("Ice"):
-			MOVE_SPEED -= 2
+			if MOVE_SPEED >= -10:
+				MOVE_SPEED = -10
+			else:
+				MOVE_SPEED += 10
+			enemyStats.health -= area.damage
 		if enemyStats.health > 0:
 			enemyStats.health -= area.damage
 		else:
