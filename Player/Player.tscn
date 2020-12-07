@@ -68,7 +68,7 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=4]
 resource_name = "build right"
 length = 2.9
 tracks/0/type = "value"
@@ -396,17 +396,17 @@ graph_offset = Vector2( -58.8201, 103.351 )
 [sub_resource type="CircleShape2D" id=39]
 radius = 14.0644
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 3.73795, 3.9474 )
 
-[sub_resource type="Gradient" id=40]
+[sub_resource type="Gradient" id=41]
 offsets = PoolRealArray( 0, 0.151351, 0.4, 0.697297, 1 )
 colors = PoolColorArray( 0.980469, 0.897855, 0.0191498, 1, 0.871094, 0.140043, 0.0204163, 1, 0.944918, 0.295892, 0.189688, 1, 0.945801, 0.30718, 0.202679, 1, 0.961329, 0.96875, 0.0189209, 1 )
 
-[sub_resource type="GradientTexture" id=41]
-gradient = SubResource( 40 )
+[sub_resource type="GradientTexture" id=42]
+gradient = SubResource( 41 )
 
-[sub_resource type="ParticlesMaterial" id=42]
+[sub_resource type="ParticlesMaterial" id=43]
 flag_disable_z = true
 direction = Vector3( 50, 20, 0 )
 spread = 180.0
@@ -417,7 +417,7 @@ angular_velocity = 50.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 5.0
-color_ramp = SubResource( 41 )
+color_ramp = SubResource( 42 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -439,7 +439,7 @@ frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/build left" = SubResource( 3 )
-"anims/build right" = SubResource( 43 )
+"anims/build right" = SubResource( 4 )
 "anims/death left" = SubResource( 5 )
 "anims/death right" = SubResource( 6 )
 "anims/idle left" = SubResource( 7 )
@@ -473,7 +473,7 @@ collision_layer = 0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="ConstructionHitbox/BuildZone"]
 position = Vector2( 21.0136, -0.169115 )
-shape = SubResource( 44 )
+shape = SubResource( 40 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 max_health = 7
@@ -490,6 +490,6 @@ amount = 50
 lifetime = 0.3
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 42 )
+process_material = SubResource( 43 )
 [connection signal="body_entered" from="ConstructionHitbox/BuildZone" to="." method="_on_BuildZone_body_entered"]
 [connection signal="body_exited" from="ConstructionHitbox/BuildZone" to="." method="_on_BuildZone_body_exited"]

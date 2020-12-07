@@ -30,5 +30,5 @@ one_shot = true
 autostart = true
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2( -54.2507, 18.3464 )
+position = Vector2( -70.5142, 3.14359 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
