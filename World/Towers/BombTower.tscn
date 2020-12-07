@@ -1,11 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/Tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Music & Sound/Explosion.wav" type="AudioStream" id=2]
+[ext_resource path="res://World/Towers/canontower-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://World/Bomb.tscn" type="PackedScene" id=4]
 
 [node name="BombTower" type="Node2D"]
+position = Vector2( 61.9086, 94.4503 )
 
 [node name="Tower" parent="." instance=ExtResource( 1 )]
+Bullet = ExtResource( 4 )
+MAX_RANGE = 340
+COOLDOWN = 5
+
+[node name="FirePosition" parent="Tower" index="0"]
+position = Vector2( 20.409, -76 )
+
+[node name="Sprite" parent="Tower" index="1"]
+texture = ExtResource( 3 )
+hframes = 6
+frame = 4
+
+[node name="CollisionShape2D" parent="Tower" index="2"]
+visible = true
+position = Vector2( -0.206299, -21.6346 )
+
+[node name="RangeSphere" parent="Tower/Range" index="0"]
+position = Vector2( -1.28061, -39.7194 )
+
+[node name="HurtBox" parent="Tower" index="7"]
+position = Vector2( 0.747551, 8.46661 )
 
 [node name="AudioStreamPlayer" parent="Tower" index="8"]
 stream = ExtResource( 2 )
