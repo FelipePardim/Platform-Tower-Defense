@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/fill-bar 2.png" type="Texture" id=1]
-[ext_resource path="res://Assets/empty-bar.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fill bar 2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/empty bar 2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/vippng.com-pacman-pixel-png-3148256.png" type="Texture" id=3]
 [ext_resource path="res://Assets/label_bg.png" type="Texture" id=4]
+
+
 
 [sub_resource type="Theme" id=1]
 
