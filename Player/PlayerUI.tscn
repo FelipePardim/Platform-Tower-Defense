@@ -5,30 +5,30 @@
 [ext_resource path="res://Assets/vippng.com-pacman-pixel-png-3148256.png" type="Texture" id=3]
 [ext_resource path="res://Assets/label_bg.png" type="Texture" id=4]
 
-
-
 [sub_resource type="Theme" id=1]
 
 [node name="PlayerUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 44.0
+margin_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 1044.0
-margin_bottom = 575.0
+margin_left = -0.478348
+margin_top = -28.2107
+margin_right = 1013.52
+margin_bottom = 516.789
 theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureProgress" type="TextureProgress" parent="VBoxContainer"]
-margin_right = 1045.0
-margin_bottom = 217.0
+margin_right = 1014.0
+margin_bottom = 100.0
 value = 80.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
@@ -39,26 +39,25 @@ __meta__ = {
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 221.0
-margin_right = 1045.0
-margin_bottom = 221.0
+margin_top = 104.0
+margin_right = 1014.0
+margin_bottom = 104.0
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/NinePatchRect"]
-margin_left = 21.6364
-margin_top = 44.1748
-margin_right = 37.6364
-margin_bottom = 58.1748
-rect_scale = Vector2( 10, 10 )
+margin_left = 100.13
+margin_top = -69.7124
+margin_right = 124.13
+margin_bottom = -55.7124
 text = "999"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="vippngcom-pacman-pixel-png-3148256" type="Sprite" parent="VBoxContainer/NinePatchRect/Label"]
-position = Vector2( 38.2212, 6.71399 )
-scale = Vector2( 0.0191167, 0.0164163 )
+position = Vector2( 41.9824, 6.5929 )
+scale = Vector2( 0.0193935, 0.015082 )
 texture = ExtResource( 3 )

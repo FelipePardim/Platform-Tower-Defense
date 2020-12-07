@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Player/PlayerUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/mmenuNewGame.gd" type="Script" id=3]
 [ext_resource path="res://World/Watch.tscn" type="PackedScene" id=4]
 
@@ -10,6 +11,12 @@ current = true
 
 [node name="Watch" parent="." instance=ExtResource( 4 )]
 position = Vector2( 146.077, -79.2254 )
+
+[node name="PlayerUI" parent="." instance=ExtResource( 2 )]
+margin_left = -168.01
+margin_top = -97.2191
+margin_right = -124.01
+margin_bottom = -66.2191
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
