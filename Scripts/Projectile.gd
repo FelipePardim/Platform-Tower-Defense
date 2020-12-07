@@ -1,7 +1,7 @@
 extends Area2D
 
-export var speed = 750
-export var damage = 500
+export var speed = 900
+export var damage = 200
 
 func _ready():
 	add_to_group("Projectiles")

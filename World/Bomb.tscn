@@ -9,7 +9,8 @@ radius = 6.32982
 [node name="Bomb" type="Node2D"]
 
 [node name="Projectile" parent="." instance=ExtResource( 2 )]
-damage = 10
+speed = 950
+damage = 200
 
 [node name="Sprite" parent="Projectile" index="0"]
 texture = ExtResource( 1 )

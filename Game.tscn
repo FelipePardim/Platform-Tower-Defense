@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/layers_fullcolor/sky_fc.png" type="Texture" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Enemies/Snake.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Hyena.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/layers_fullcolor/grassy_mountains_fc.png" type="Texture" id=7]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=9]
@@ -113,12 +113,6 @@ position = Vector2( -431.319, 0.722275 )
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 379.523, -1.78178 )
 
-[node name="BombTower" parent="." instance=ExtResource( 11 )]
-position = Vector2( -126.327, 36.6294 )
-
-[node name="Snake" parent="." instance=ExtResource( 6 )]
-position = Vector2( 186.329, 24.6942 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32.2271, 33.2012 )
 
@@ -131,3 +125,9 @@ limit_left = -500
 limit_right = 400
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="BombTower" parent="." instance=ExtResource( 11 )]
+position = Vector2( -85.5912, 38.387 )
+
+[node name="Hyena" parent="." instance=ExtResource( 6 )]
+position = Vector2( 198.003, 16.0543 )

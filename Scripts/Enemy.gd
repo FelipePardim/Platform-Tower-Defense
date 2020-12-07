@@ -37,7 +37,7 @@ func _on_HurtBox_area_entered(area):
 			enemyStats.health -= area.damage
 		if enemyStats.health > 0:
 			enemyStats.health -= area.damage
-		else:
+		if enemyStats.health <= 0:
 			player.playerStats.coin += enemyBounty
 			queue_free()
 

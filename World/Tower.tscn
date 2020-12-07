@@ -48,7 +48,6 @@ func shoot():
 		if closest_target != null:
 			self.add_child(b)
 			state = SHOOTING
-			print(closest_target_distance)
 			# Getting the angle to the closest target and shooting
 			b.rotation = b.get_angle_to(closest_target.get_global_position())
 
