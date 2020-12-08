@@ -69,12 +69,12 @@ To run this project, please install this:
 <h2 id="builds">
     📦 Build's (to only play the game):
 </h2>
-<h1> 🏗️ 🚧 Under Construction 🚧 </h1>
 
-<!-- This are the current build's: -->
+This are the current build's:
 
-<!-- - [Windows 10](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/Builds/). -->
-<!-- - [Linux](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/Builds/). -->
+- [Windows 10](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/Builds/PlatformTowerDefense.exe).
+- [Linux](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/Builds/PlatformTowerDefense.x86_64).
+* [PCK File](https://github.com/FelipePardim/Platform-Tower-Defense/blob/main/Builds/PlatformTowerDefense.pck).
 
 ---
 
