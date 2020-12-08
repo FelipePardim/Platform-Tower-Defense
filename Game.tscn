@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/grassblocks.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/layers_fullcolor/sky_fc.png" type="Texture" id=3]
 [ext_resource path="res://World/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Enemies/Hyena.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Towers/IceTower.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/layers_fullcolor/grassy_mountains_fc.png" type="Texture" id=7]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=9]
 [ext_resource path="res://Assets/layers_fullcolor/far_mountains_fc.png" type="Texture" id=10]
 [ext_resource path="res://World/Towers/BombTower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/BuildingSite.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 50, 48, 0.528824, 48, 0.528824, 0.336353, 50, 0.336353 )
@@ -127,7 +128,13 @@ position = Vector2( -32.2271, 33.2012 )
 remote_path = NodePath("../../Camera2D")
 
 [node name="BombTower" parent="." instance=ExtResource( 11 )]
-position = Vector2( -85.5912, 38.387 )
+position = Vector2( -320.905, 37.7089 )
 
-[node name="Hyena" parent="." instance=ExtResource( 6 )]
-position = Vector2( 198.003, 16.0543 )
+[node name="ConstructionLocal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 179.723, -1.91367 )
+
+[node name="ConstructionLocal2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 27.9354, -2.44109 )
+
+[node name="IceTower" parent="." instance=ExtResource( 6 )]
+position = Vector2( -113.122, 48.695 )
