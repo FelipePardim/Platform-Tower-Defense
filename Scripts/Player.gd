@@ -31,8 +31,7 @@ export (float, 0, 1.0) var acceleration = 0.3
 
 func _ready():
 	animationTree.active = true
-	print(playerStats.max_coin)
-	print(playerStats.coin)
+	playerStats.health = 50
 
 func get_input():
 	var input_vector = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

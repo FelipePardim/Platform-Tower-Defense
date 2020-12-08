@@ -5,7 +5,6 @@ const demolitionSound = preload("res://Music & Sound/CastleDemolition.tscn")
 
 func _ready():
 	add_to_group("Towers")
-	print(castleStats.level)
 
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyHitBox"):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Pause.gd" type="Script" id=1]
-[ext_resource path="res://Player/PlayerUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/HealthUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/mmenuNewGame.gd" type="Script" id=3]
 [ext_resource path="res://World/Watch.tscn" type="PackedScene" id=4]
 
@@ -9,14 +9,14 @@
 position = Vector2( -187.273, 126.938 )
 current = true
 
+[node name="HealthUI" parent="." instance=ExtResource( 2 )]
+margin_left = -158.0
+margin_top = -112.0
+margin_right = -44.0
+margin_bottom = -48.0
+
 [node name="Watch" parent="." instance=ExtResource( 4 )]
 position = Vector2( 146.077, -79.2254 )
-
-[node name="PlayerUI" parent="." instance=ExtResource( 2 )]
-margin_left = -168.01
-margin_top = -97.2191
-margin_right = -124.01
-margin_bottom = -66.2191
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
